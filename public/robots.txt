@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bherasociety.com/sitemap.xml
