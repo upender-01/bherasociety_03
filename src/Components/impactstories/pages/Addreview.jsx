@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { addReview } from "../services/reviewApi";
+import { addReview } from "../services/reviewapi";
 
 export default function AddReview() {
   const [form, setForm] = useState({

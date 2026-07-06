@@ -6,9 +6,9 @@ import ServicesSection from "./Ourservices";
 import HospitalsAndFacilities from "./Hospital_section";
 import ImpactStories from "./Impactstories";
 import Brandingpartners from "./Brandingpartners";
-import FAQs from "./FAQs";
-import Footer from "./Footer";
-import Aboutus from "./Aboutus";
+import FAQs from "./FAQs"
+import Footer from "./Footer"
+import Aboutus from "./Aboutus"
 import ScrollTop from "./scrolltop";
 const Home = () => {
   return (

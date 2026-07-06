@@ -1,7 +1,7 @@
  import React, { useState } from "react";
 
-import AdminLogin from "../components/Admin/AdminLogin";
-import AdminReviews from "../components/Admin/AdminReviews";
+import AdminLogin from "../Components/Admin/Adminlogin";
+import AdminReviews from "../Components/Admin/Adminreviews";
 
 export default function AdminController() {
   const [token, setToken] =
