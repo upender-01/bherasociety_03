@@ -8,8 +8,8 @@ import {
   MessageSquare,
   Clock,
 } from "lucide-react";
-
-const API_URL = "http://localhost:5000/api/reviews";
+const URL=import.meta.env.VITE_API_URL;
+const API_URL = `${URL}/api/reviews`;
 
 export default function AdminReviews() {
   const [pendingReviews, setPendingReviews] = useState([]);

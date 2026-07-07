@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
-
+const API_URL=import.meta.env.VITE_API_URL;
 const ContactUs = () => {
   const [formData, setFormData] = useState({
   name: "",
@@ -24,7 +24,7 @@ const handleSubmit = async (e) => {
 
   try {
     const { data } = await axios.post(
-      "http://localhost:5000/api/contact/send-message",
+      `${API_URL}/api/contact/send-message`,
       formData
     );
 

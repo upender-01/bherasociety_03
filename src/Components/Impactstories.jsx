@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-
-const API_URL = 'http://localhost:5000/api/reviews';
+const URL=import.meta.env.VITE_API_URL;
+const API_URL = `${URL}/api/reviews`;
 import Bherascoietyimage from "../assets/images/bherasocietyimage.jpeg";
 
 
@@ -181,7 +181,7 @@ export default function ImpactStories() {
 
         {/* --- MODERN SHARE REVIEW MODAL --- */}
         {isModalOpen && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div className="fixed inset-0 z-50 flex items-start justify-center pt-24 pb-20">
             {/* Blurred Backdrop */}
             <div 
               className="absolute inset-0 bg-gray-900/40 backdrop-blur-md"
@@ -189,9 +189,9 @@ export default function ImpactStories() {
             ></div>
             
             {/* Modal Content */}
-            <div className="relative bg-white rounded-3xl shadow-2xl w-full max-w-lg overflow-hidden animate-custom-fade text-black">
+            <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden animate-custom-fade text-black">
               <div className="px-8 py-8">
-                <div className="flex justify-between items-center mb-8">
+                <div className="flex justify-between items-center mb-6">
                   <div>
                     <h3 className="text-2xl font-extrabold text-gray-900">Write a Review</h3>
                     <p className="text-sm text-gray-500 mt-1">Tell us about your experience.</p>
@@ -201,7 +201,7 @@ export default function ImpactStories() {
                   </button>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form onSubmit={handleSubmit} className="space-y-2">
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-bold text-gray-700 uppercase mb-1">Full Name</label>

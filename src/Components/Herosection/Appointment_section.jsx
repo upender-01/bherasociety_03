@@ -1,4 +1,5 @@
  import React, { useState } from "react";
+const API_URL=import.meta.env.VITE_API_URL;
 
 const AppointmentForm = ({
   formData,
@@ -20,7 +21,7 @@ const AppointmentForm = ({
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/appointments",
+        `${API_URL}/api/appointments`,
         {
           method: "POST",
           headers: {

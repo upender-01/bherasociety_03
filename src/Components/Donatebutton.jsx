@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Heart, CreditCard, QrCode, ShieldCheck, HeartHandshake } from 'lucide-react';
 import Qr from "../assets/images/Qr.png";
+const API_URL=import.meta.env.VITE_API_URL;
 const Donatebutton = () => {
   const [amount, setAmount] = useState(500);
   const [loading, setLoading] = useState(false);
@@ -35,7 +36,7 @@ const Donatebutton = () => {
     }
 
     try {
-      const result = await fetch('http://localhost:5000/create-order', {
+      const result = await fetch(`${API_URL}/create-order`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
