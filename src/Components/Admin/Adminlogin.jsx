@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { User, Lock, ShieldCheck } from "lucide-react";
-
+const API_URL=import.meta.env.VITE_API_URL;
 export default function AdminLogin({ setToken }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-
+ 
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -15,7 +15,7 @@ export default function AdminLogin({ setToken }) {
 
     try {
       const res = await fetch(
-        "http://localhost:5000/api/auth/login",
+        `${API_URL}/api/auth/login`,
         {
           method: "POST",
           headers: {
