@@ -138,6 +138,8 @@ const Navbar = () => {
                       group-hover:opacity-100
                       group-hover:visible
                       group-hover:translate-y-0
+                      bg-gray-900
+                      rounded-2xl
                       transition-all
                       duration-300
                       z-50
