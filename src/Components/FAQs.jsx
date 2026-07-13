@@ -26,11 +26,6 @@ const faqs = [
     answer:
       "BHERA Society manages 14 old age homes that provide shelter, medical care, and rehabilitation to senior citizens.",
   },
-  {
-    question: "Can I book an appointment online?",
-    answer:
-      "Yes, appointments can be booked online through their form. You will need to provide basic information such as name, doctor name, and disease description.",
-  },
 ];
 
 const FAQ = () => {
@@ -41,7 +36,7 @@ const FAQ = () => {
   };
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-900/0 transition-colors duration-300" id="faq">
+    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-900/0 transition-colors text-white duration-300" id="faq">
       <div className="max-w-4xl mx-auto">
         
         {/* Header Section */}
@@ -49,7 +44,6 @@ const FAQ = () => {
           <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white tracking-tight">
             Frequently Asked Questions
           </h2>
-          <div className="mt-3 w-16 h-1 bg-blue-600 mx-auto rounded-full"></div>
         </div>
 
         {/* Accordion Wrapper */}

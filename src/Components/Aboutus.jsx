@@ -61,7 +61,7 @@ const AboutUs = () => {
               Transforming Lives
             </span>
           </h2>
-          <p className="mt-6 text-gray-300 max-w-2xl mx-auto text-lg leading-relaxed">
+          <p className="mt-6 text-white max-w-2xl mx-auto text-lg leading-relaxed">
             <span className="font-extrabold text-2xl">Bright Health Education Rural Development Ambition (BHERA) </span> is a registered 
             non‑profit medical‑humanitarian organization based in Telangana, India. 
             Founded by <span className="font-extrabold">DARAVATH REDDY</span> with the vision of bringing light, restoring sight, and 
@@ -95,7 +95,7 @@ const AboutUs = () => {
 
           {/* Right Column: Content & Mission/Vision */}
           <motion.div variants={staggerContainer} className="flex flex-col justify-center">
-            <motion.h3 variants={fadeInUp} className="text-3xl md:text-4xl font-bold text-white mb-6 uppercase">
+            <motion.h3 variants={fadeInUp} className="text-3xl md:text-4xl font-extrabold text-white mb-6 uppercase">
               Our Organization Story
             </motion.h3>
 

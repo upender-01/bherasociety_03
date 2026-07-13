@@ -120,8 +120,8 @@ export default function ImpactStories() {
         {/* --- REVIEWS SECTION --- */}
         <section className="pt-20 pb-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-14">
-            <h2 className="text-4xl font-extrabold text-gray-900 tracking-tight mb-4">Patient Impact & Stories</h2>
-            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">Hear directly from the lives we have touched. Your feedback helps us grow and serve our community better.</p>
+            <h2 className="text-4xl font-extrabold text-white tracking-tight mb-4">Patient Impact & Stories</h2>
+            <p className="text-lg text-white mb-8 max-w-2xl mx-auto">Hear directly from the lives we have touched. Your feedback helps us grow and serve our community better.</p>
             <button 
               onClick={() => setIsModalOpen(true)}
               className="px-8 py-3.5 bg-blue-600 text-white font-bold rounded-full shadow-lg shadow-blue-600/30 hover:bg-blue-700 hover:-translate-y-0.5 transition-all duration-200"
@@ -159,8 +159,8 @@ export default function ImpactStories() {
 
         {/* --- GALLERY SECTION --- */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="flex items-center justify-between mb-8 border-b border-gray-200 pb-4">
-            <h3 className="text-3xl font-bold text-gray-900">Community Gallery</h3>
+          <div className="flex items-center justify-center mb-8 border-b border-gray-200 pb-4">
+            <h3 className="text-3xl font-extrabold text-white">Community Gallery</h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {galleryItems.map(item => (

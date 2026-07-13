@@ -54,15 +54,15 @@ const Quick_highlight = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Heading */}
         <div className="text-center mb-20">
-          <span className="inline-block px-5 py-2 rounded-full border border-cyan-400/20 bg-cyan-500/10 text-cyan-400 text-sm font-semibold">
+          {/* <span className="inline-block px-5 py-2 rounded-full border border-cyan-400/20 bg-cyan-500/10 text-cyan-400 text-sm font-semibold">
             Quick Highlights
-          </span>
+          </span> */}
 
           <h2 className="mt-6 text-4xl md:text-5xl font-bold text-white">
             Impact We Have Created
           </h2>
 
-          <p className="mt-5 text-slate-300 max-w-3xl mx-auto text-lg">
+          <p className="mt-5 text-white max-w-3xl mx-auto text-lg">
             Transforming lives through accessible eye care, advanced treatment,
             and community outreach initiatives.
           </p>
@@ -148,7 +148,7 @@ const Quick_highlight = () => {
                   <h4
                     className="
                       text-2xl
-                      font-bold
+                      font-extrabold
                       text-white
                       mb-4
                       transition-all
