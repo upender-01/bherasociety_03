@@ -12,13 +12,13 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-slate-900/0 font-bold text-gray-300 pt-16 pb-8 px-6 md:px-16 border-t border-gray-900 font-sans">
+    <footer className="bg-slate-900/0 font-bold text-white pt-16 pb-8 px-6 md:px-16 border-t border-gray-900 font-sans">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-gray-800/60">
         
         {/* Column 1: Organization & Contact Brief (Takes 4/12 width) */}
         <div className="md:col-span-4 space-y-4">
-          <h3 className="text-xl font-bold text-white tracking-tight">BHERA Society</h3>
-          <p className="text-sm text-gray-400 leading-relaxed">
+          <h3 className="text-xl font-bold text-white tracking-tight uppercase">BHERA Society</h3>
+          <p className="text-sm text-white leading-relaxed">
             Society for Health, Education, Poverty Alleviation and Rural Development. Working towards transforming healthcare access across rural communities.
           </p>
           <div className="space-y-2 text-sm pt-2">
@@ -60,7 +60,7 @@ const Footer = () => {
             <li><a href="#home" className="hover:text-blue-500 transition-colors">Home</a></li>
             <li><a href="#about" className="hover:text-blue-500 transition-colors">About Us</a></li>
             <li><a href="#facilities" className="hover:text-blue-500 transition-colors">Services</a></li>
-            <li><a href="/appointment" className="hover:text-blue-500 transition-colors">Appointment</a></li>
+            <li><a href="/" className="hover:text-blue-500 transition-colors">Appointment</a></li>
             <li><a href="#faq" className="hover:text-blue-500 transition-colors">FAQ</a></li>
           </ul>
         </div>
@@ -80,7 +80,7 @@ const Footer = () => {
         {/* Column 4: Newsletter Signup (Takes 4/12 width) */}
         <div className="md:col-span-4 space-y-4">
           <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-1">Stay Updated</h4>
-          <p className="text-sm text-gray-400">Subscribe to our newsletter to receive healthcare camp updates and community logs.</p>
+          <p className="text-sm text-white">Subscribe to our newsletter to receive healthcare camp updates and community logs.</p>
           <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2 pt-1">
             <input 
               type="email" 
@@ -102,12 +102,12 @@ const Footer = () => {
       </div>
 
       {/* Bottom Metadata Layer */}
-      <div className="max-w-7xl mx-auto mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+      <div className="max-w-7xl mx-auto mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white">
         <p>© {new Date().getFullYear()} BHERA Society. All rights reserved.</p>
         
         {/* Simplified modern designer tag */}
         <p className="font-medium tracking-wide">
-          Designed by <span className="text-gray-400">Bhukya Upender</span> | <a href="mailto:bhukyaupender31@gmail.com" className="text-blue-500/80 hover:text-blue-400 font-semibold transition-colors">bhukyaupender31@gmail.com</a>
+          Designed by <span className="text-white">Bhukya Upender</span> | <a href="mailto:bhukyaupender31@gmail.com" className="text-blue-500/80 hover:text-blue-400 font-semibold transition-colors">bhukyaupender31@gmail.com</a>
         </p>
       </div>
     </footer>

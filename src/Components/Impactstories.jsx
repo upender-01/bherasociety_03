@@ -160,7 +160,7 @@ export default function ImpactStories() {
         {/* --- GALLERY SECTION --- */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="flex items-center justify-center mb-8 border-b border-gray-200 pb-4">
-            <h3 className="text-3xl font-extrabold text-white">Community Gallery</h3>
+            <h3 className="text-3xl font-extrabold text-white ">Community Gallery</h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {galleryItems.map(item => (

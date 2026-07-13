@@ -64,8 +64,8 @@ export default function BrandingPartners() {
       `}} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-8">
-        <h4 className=" font-bold text-white-500 md:text-4xl text-shadow-cyan-400 tracking-widest uppercase">Trusted Branding Partners</h4>
-        <p className="text-sm text-yellow-500 font-bold mt-1">Collaborating with top healthcare institutions and insurance providers</p>
+        <h4 className=" font-extrabold text-white-500 md:text-4xl text-shadow-cyan-400 tracking-widest uppercase">Trusted Branding Partners</h4>
+        <p className="text-sm font-bold mt-1">Collaborating with top healthcare institutions and insurance providers</p>
       </div>
 
       {/* Marquee Display Container */}
