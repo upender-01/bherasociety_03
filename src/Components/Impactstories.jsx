@@ -151,7 +151,7 @@ export default function ImpactStories() {
                   </div>
                 </div>
               )) : (
-                <p className="text-center w-full text-gray-500">No stories available yet. Be the first to share!</p>
+                <p className="text-center text-white w-full text-gray-500">No stories available yet. Be the first to share!</p>
               )}
             </div>
           </div>

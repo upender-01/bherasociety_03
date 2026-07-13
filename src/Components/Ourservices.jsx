@@ -59,7 +59,7 @@ const ServicesSection = () => {
             Healthcare Services We Provide
           </h2>
 
-          <p className="mt-5 text-slate-400 max-w-3xl mx-auto text-lg leading-relaxed">
+          <p className="mt-5 text-white max-w-3xl mx-auto text-lg leading-relaxed">
             Delivering quality healthcare, vision care, community outreach,
             senior support, and health education programs to improve lives and
             create healthier communities.
@@ -120,15 +120,15 @@ const ServicesSection = () => {
                 </h3>
 
                 <p
-                  className="mt-4 text-slate-400 leading-relaxed
+                  className="mt-4 text-white leading-relaxed
                   transition-all duration-500
-                  group-hover:text-slate-200"
+                  "
                 >
                   {service.description}
                 </p>
 
                 {/* Learn More */}
-                <div
+                {/* <div
                   className="mt-6 flex items-center gap-2
                   text-cyan-400 font-medium
                   translate-x-0
@@ -137,7 +137,7 @@ const ServicesSection = () => {
                 >
                   Learn More
                   <span>→</span>
-                </div>
+                </div> */}
               </div>
 
               {/* Animated Border */}

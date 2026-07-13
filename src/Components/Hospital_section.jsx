@@ -33,7 +33,7 @@ const HospitalsAndFacilities = () => {
   return (
     <section 
      id="facilities"
-     className="relative py-16 bg-slate-900/0 overflow-hidden">
+     className="relative py-10 bg-slate-900/0 overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-0 left-0 h-72 w-72 bg-cyan-500/10 blur-[120px] rounded-full" />
       <div className="absolute bottom-0 right-0 h-72 w-72 bg-blue-500/10 blur-[120px] rounded-full" />
@@ -45,7 +45,7 @@ const HospitalsAndFacilities = () => {
             Our Healthcare Network
           </h2>
 
-          <p className="mt-4 text-slate-400 max-w-2xl mx-auto">
+          <p className="mt-4 text-white max-w-2xl mx-auto">
             Accessible healthcare facilities dedicated to providing
             quality treatment, emergency support, and compassionate care.
           </p>
