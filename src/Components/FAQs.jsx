@@ -41,7 +41,7 @@ const FAQ = () => {
         
         {/* Header Section */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white dark:text-white tracking-tight">
             Frequently Asked Questions
           </h2>
         </div>

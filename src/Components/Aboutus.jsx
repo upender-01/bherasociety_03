@@ -41,7 +41,7 @@ const AboutUs = () => {
       }}
     >
       {/* Deep Gradient Overlay for better text legibility */}
-      <div className="absolute inset-0 bg-slate-900/0 from-gray-950/90 via-gray-900/80 to-gray-950/95 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-slate-900/0 from-gray-950/90 via-gray-900/80 to-gray-950/95 "></div>
 
       <motion.div 
         className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8"
@@ -52,7 +52,7 @@ const AboutUs = () => {
       >
         {/* Section Heading */}
         <motion.div className="text-center mb-20" variants={fadeInUp}>
-          <span className="text-emerald-400 font-bold tracking-widest uppercase text-sm mb-2 block">
+          <span className="text-emerald-400 font-extrabold tracking-widest uppercase  text-3xl mb-2 block">
             About Bhera Society
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mt-2 tracking-tight">

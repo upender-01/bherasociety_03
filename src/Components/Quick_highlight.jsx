@@ -58,7 +58,7 @@ const Quick_highlight = () => {
             Quick Highlights
           </span> */}
 
-          <h2 className="mt-6 text-4xl md:text-5xl font-bold text-white">
+          <h2 className="mt-6 text-3xl md:text-5xl font-extrabold text-white">
             Impact We Have Created
           </h2>
 
