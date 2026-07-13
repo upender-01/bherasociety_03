@@ -1,37 +1,66 @@
- import React, { useState } from "react";
-const API_URL=import.meta.env.VITE_API_URL;
+import React, { useState } from "react";
 
-const AppointmentForm = ({
-  formData,
-  setFormData,
-  errors,
-}) => {
-  const [successMessage, setSuccessMessage] =
-    useState("");
+const API_URL = import.meta.env.VITE_API_URL;
 
-  const [errorMessage, setErrorMessage] =
-    useState("");
+const VolunteerForm = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    city: "",
+    interest: "",
+  });
 
+  const [errors, setErrors] = useState({
+    name: "",
+    phone: "",
+    email: "",
+  });
+
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  // Validation
+  const validate = () => {
+    const newErrors = {};
+
+    if (!formData.name.trim()) {
+      newErrors.name = "Full Name is required";
+    }
+
+    if (!/^[6-9]\d{9}$/.test(formData.phone)) {
+      newErrors.phone = "Enter a valid 10-digit phone number";
+    }
+
+    if (
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)
+    ) {
+      newErrors.email = "Enter a valid email address";
+    }
+
+    setErrors(newErrors);
+
+    return Object.keys(newErrors).length === 0;
+  };
+
+  // Submit Form
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (errors.name || errors.phone) {
-      return;
-    }
+    if (!validate()) return;
+
+    setLoading(true);
 
     try {
       const response = await fetch(
-        `${API_URL}/api/appointments`,
+        `${API_URL}/api/volunteers`,
         {
           method: "POST",
           headers: {
-            "Content-Type":
-              "application/json",
+            "Content-Type": "application/json",
           },
-          body: JSON.stringify({
-            name: formData.name,
-            phone: formData.phone,
-          }),
+          body: JSON.stringify(formData),
         }
       );
 
@@ -39,7 +68,7 @@ const AppointmentForm = ({
 
       if (response.ok) {
         setSuccessMessage(
-          "Appointment Booked Successfully ✓"
+          "🎉 Thank you for registering as a volunteer!"
         );
 
         setErrorMessage("");
@@ -47,6 +76,15 @@ const AppointmentForm = ({
         setFormData({
           name: "",
           phone: "",
+          email: "",
+          city: "",
+          interest: "",
+        });
+
+        setErrors({
+          name: "",
+          phone: "",
+          email: "",
         });
 
         setTimeout(() => {
@@ -54,16 +92,15 @@ const AppointmentForm = ({
         }, 3000);
       } else {
         setErrorMessage(
-          data.message ||
-            "Failed to book appointment"
+          data.message || "Registration Failed"
         );
 
         setTimeout(() => {
           setErrorMessage("");
         }, 3000);
       }
-    } catch (error) {
-      console.error(error);
+    } catch (err) {
+      console.error(err);
 
       setErrorMessage(
         "Server Error. Please try again."
@@ -72,17 +109,20 @@ const AppointmentForm = ({
       setTimeout(() => {
         setErrorMessage("");
       }, 3000);
+    } finally {
+      setLoading(false);
     }
   };
-
-  return (
+    return (
     <>
+      {/* Success Message */}
       {successMessage && (
         <div className="fixed top-5 right-5 z-50 bg-green-600 text-white px-5 py-3 rounded-lg shadow-lg">
           {successMessage}
         </div>
       )}
 
+      {/* Error Message */}
       {errorMessage && (
         <div className="fixed top-5 right-5 z-50 bg-red-600 text-white px-5 py-3 rounded-lg shadow-lg">
           {errorMessage}
@@ -90,19 +130,23 @@ const AppointmentForm = ({
       )}
 
       <div className="w-full sm:max-w-lg lg:max-w-md lg:w-[35%] shrink-0">
-        <div className="bg-[#1e3a5f]/80 backdrop-blur-lg rounded-2xl p-5 shadow-2xl border border-white/10">
-          <h2 className="text-xl font-bold text-white mb-4 text-center border-b border-white/20 pb-2">
-            Book an Appointment
+        <div className="bg-[#1e3a5f]/80 backdrop-blur-lg rounded-2xl p-6 shadow-2xl border border-white/10">
+
+          <h2 className="text-2xl font-bold text-white text-center mb-2">
+            Become a Volunteer
           </h2>
 
-          <form
-            onSubmit={handleSubmit}
-            className="space-y-4"
-          >
+          <p className="text-gray-300 text-center text-sm mb-6">
+            Join Bhera Society and help us create a better tomorrow.
+          </p>
+
+          <form onSubmit={handleSubmit} className="space-y-4">
+
+            {/* Full Name */}
             <div>
               <input
                 type="text"
-                placeholder="Enter Your Name"
+                placeholder="Full Name"
                 value={formData.name}
                 onChange={(e) =>
                   setFormData({
@@ -110,7 +154,7 @@ const AppointmentForm = ({
                     name: e.target.value,
                   })
                 }
-                className={`w-full bg-[#0f2440]/80 text-white px-3 py-3 rounded-lg outline-none transition-all ${
+                className={`w-full bg-[#0f2440]/80 text-white px-4 py-3 rounded-lg outline-none transition-all ${
                   errors.name
                     ? "ring-2 ring-red-500"
                     : "focus:ring-2 focus:ring-emerald-400"
@@ -124,23 +168,20 @@ const AppointmentForm = ({
               )}
             </div>
 
+            {/* Phone */}
             <div>
               <input
                 type="tel"
                 maxLength={10}
-                placeholder="Enter Your Phone"
+                placeholder="Phone Number"
                 value={formData.phone}
                 onChange={(e) =>
                   setFormData({
                     ...formData,
-                    phone:
-                      e.target.value.replace(
-                        /\D/g,
-                        ""
-                      ),
+                    phone: e.target.value.replace(/\D/g, ""),
                   })
                 }
-                className={`w-full bg-[#0f2440]/80 text-white px-3 py-3 rounded-lg outline-none transition-all ${
+                className={`w-full bg-[#0f2440]/80 text-white px-4 py-3 rounded-lg outline-none transition-all ${
                   errors.phone
                     ? "ring-2 ring-red-500"
                     : "focus:ring-2 focus:ring-emerald-400"
@@ -154,17 +195,114 @@ const AppointmentForm = ({
               )}
             </div>
 
+            {/* Email */}
+            <div>
+              <input
+                type="email"
+                placeholder="Email Address"
+                value={formData.email}
+                onChange={(e) =>
+                  setFormData({
+                    ...formData,
+                    email: e.target.value,
+                  })
+                }
+                className={`w-full bg-[#0f2440]/80 text-white px-4 py-3 rounded-lg outline-none transition-all ${
+                  errors.email
+                    ? "ring-2 ring-red-500"
+                    : "focus:ring-2 focus:ring-emerald-400"
+                }`}
+              />
+
+              {errors.email && (
+                <p className="text-red-400 text-xs mt-1">
+                  {errors.email}
+                </p>
+              )}
+            </div>
+
+            {/* City */}
+            <div>
+              <input
+                type="text"
+                placeholder="City"
+                value={formData.city}
+                onChange={(e) =>
+                  setFormData({
+                    ...formData,
+                    city: e.target.value,
+                  })
+                }
+                className="w-full bg-[#0f2440]/80 text-white px-4 py-3 rounded-lg outline-none focus:ring-2 focus:ring-emerald-400"
+              />
+            </div>
+
+            {/* Area of Interest */}
+            <div>
+              <select
+                value={formData.interest}
+                onChange={(e) =>
+                  setFormData({
+                    ...formData,
+                    interest: e.target.value,
+                  })
+                }
+                className="w-full bg-[#0f2440]/80 text-white px-4 py-3 rounded-lg outline-none focus:ring-2 focus:ring-emerald-400"
+              >
+                <option value="">
+                  Select Area of Interest
+                </option>
+
+                <option value="Medical Camps">
+                  Medical Camps
+                </option>
+
+                <option value="Blood Donation">
+                  Blood Donation
+                </option>
+
+                <option value="Food Distribution">
+                  Food Distribution
+                </option>
+
+                <option value="Education Support">
+                  Education Support
+                </option>
+
+                <option value="Fundraising">
+                  Fundraising
+                </option>
+
+                <option value="General Volunteer">
+                  General Volunteer
+                </option>
+
+                <option value="Other">
+                  Other
+                </option>
+              </select>
+            </div>
+
+            {/* Submit Button */}
             <button
               type="submit"
-              className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-lg transition-all duration-300 hover:-translate-y-1"
+              disabled={loading}
+              className={`w-full py-3 rounded-lg font-bold text-white transition-all duration-300 ${
+                loading
+                  ? "bg-gray-500 cursor-not-allowed"
+                  : "bg-emerald-600 hover:bg-emerald-500 hover:-translate-y-1"
+              }`}
             >
-              Book Appointment
+              {loading
+                ? "Registering..."
+                : "Register as Volunteer"}
             </button>
+
           </form>
         </div>
       </div>
     </>
   );
-};
+  };
 
-export default AppointmentForm;
+export default VolunteerForm;
