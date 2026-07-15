@@ -81,10 +81,7 @@ const Donatebutton = () => {
   };
 
   const quotes = [
-    "We make a living by what we get, but we make a life by what we give. — Winston Churchill",
-    "No one has ever become poor by giving. — Anne Frank",
-    "The best way to find yourself is to lose yourself in the service of others. — Mahatma Gandhi",
-    "It's not how much we give, but how much love we put into giving. — Mother Teresa"
+    "We make a living by what we get, but we make a life by what we give. — Winston Churchill"
   ];
 
   return (
@@ -169,7 +166,7 @@ const Donatebutton = () => {
               Quick UPI Scan
             </h3>
             
-            <div className="bg-white p-4 rounded-2xl shadow-xl z-10 transition-all duration-300 hover:scale-105">
+            <div className="bg-white p-4 rounded-2xl shadow-xl z-10 transition-all duration-300">
               <img 
                 src={Qr} 
                 alt="Dynamic UPI QR Code" 
