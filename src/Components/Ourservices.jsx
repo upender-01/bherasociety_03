@@ -2,8 +2,8 @@ import React from "react";
 import BackgroundImage from "../assets/background_image.png";
 import Healthawareness  from "../assets/images/healthawarenessprogram.jpeg";
 import Eyecare from "../assets/images/p6.jpeg";
-import Mobilemedicalcamps from "../assets/images/mobilemedicalcamp.jpeg";
-import Oldagehomes from "../assets/images/p22.jpeg";
+import Mobilemedicalcamps from "../assets/images/mmcamp.jpeg";
+import Oldagehomes from "../assets/images/oldagehome.jpeg";
 const services = [
   {
     id: 1,

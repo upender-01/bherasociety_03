@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import Chc from "../assets/images/communityhealth.jpeg";
+import Blooddonation from "../assets/images/blooddonation.jpeg";
+import Staff from "../assets/images/stafftraining.jpeg";
 const URL=import.meta.env.VITE_API_URL;
 const API_URL = `${URL}/api/reviews`;
 import Bherascoietyimage from "../assets/images/bherasocietyimage.jpeg";
 
-
 const galleryItems = [
-  { id: 1, type: 'image', url: Bherascoietyimage, alt: 'Community Health Camp' },
-  { id: 2, type: 'image', url: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?w=500', alt: 'Blood Donation Drive' },
-  { id: 3, type: 'image', url: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=500', alt: 'Staff Training Event' },
+  { id: 1, type: 'image', url: Chc, alt: 'Community Health Camp' },
+  { id: 2, type: 'image', url: Blooddonation, alt: 'Blood Donation Drive' },
+  { id: 3, type: 'image', url: Staff, alt: 'Staff Training Event' },
 ];
 
 export default function ImpactStories() {
