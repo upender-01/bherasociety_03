@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
-import { FaFacebookF, FaInstagram, FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaEnvelope, FaMapMarkerAlt, FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
 const facebooklink="https://www.facebook.com/share/18xZKiGQQb/?mibextid=wwXIfr";
 const whatsapplink="https://chat.whatsapp.com/Hp40T3iLMmR4fkyvW4pAWV";
 const API_URL=import.meta.env.VITE_API_URL;
@@ -119,11 +119,12 @@ const handleSubmit = async (e) => {
                   📞 Phone
                 </h4>
                 <p className="text-slate-300">
-                  +91 98765 43210
+                  +91 90300 82707
                 </p>
                 <p className="text-slate-300">
-                  +91 91234 56789
+                  +91 97011 91811
                 </p>
+                
               </div>
 
               {/* Email */}
@@ -166,11 +167,14 @@ const handleSubmit = async (e) => {
             <a href={facebooklink} target="_blank" rel="noreferrer" className="w-9 h-9 text-white rounded-lg bg-gray-900 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-200" aria-label="Facebook">
               <FaFacebookF size={16} />
             </a>
-            <a href="mailto:bherasociety2023@gmail.com" className="w-9 h-9 text-white rounded-lg bg-gray-900 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-200" aria-label="Email">
+            <a href="mailto:bherasociety2023@gmail.com" className="w-9 h-9 text-white rounded-lg bg-gray-900 flex items-center justify-center hover:bg-[#d93025] hover:text-white transition-all duration-200" aria-label="Email">
               <FaEnvelope size={16} />
             </a>
-            <a href="https://www.google.com/maps/place/Shree+Sathya+Lions+Eye+Hospital/@17.5972683,79.9978209,17z/data=!3m1!4b1!4m6!3m5!1s0x3a348f9b50b565e9:0x20233c7ba14c4ce!8m2!3d17.5972683!4d79.9978209!16s%2Fg%2F11whhfm7rz?entry=ttu&g_ep=EgoyMDI1MDYxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noreferrer" className="w-9 h-9 text-white rounded-lg bg-gray-900 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-200" aria-label="Location">
+            <a href="https://www.google.com/maps/place/Shree+Sathya+Lions+Eye+Hospital/@17.5972683,79.9978209,17z/data=!3m1!4b1!4m6!3m5!1s0x3a348f9b50b565e9:0x20233c7ba14c4ce!8m2!3d17.5972683!4d79.9978209!16s%2Fg%2F11whhfm7rz?entry=ttu&g_ep=EgoyMDI1MDYxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noreferrer" className="w-9 h-9 text-white rounded-lg bg-gray-900 flex items-center justify-center  hover:text-white transition-all duration-200" aria-label="Location">
               <FaMapMarkerAlt size={16} />
+            </a>
+            <a href={whatsapplink} target="_blank" rel="noreferrer" className="w-9 h-9 text-white rounded-lg bg-gray-900 flex items-center justify-center hover:bg-green-600 hover:text-white transition-all duration-200" aria-label="Location">
+              <FaWhatsapp size={16} />
             </a>
           </div>                
               </div>

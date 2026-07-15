@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { FaFacebookF, FaInstagram, FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
-
+import { FaFacebookF, FaInstagram, FaEnvelope, FaMapMarkerAlt, FaPhoneAlt , FaWhatsapp} from "react-icons/fa";
+const whatsapplink="https://chat.whatsapp.com/Hp40T3iLMmR4fkyvW4pAWV";
 const Footer = () => {
   const [newsletterEmail, setNewsletterEmail] = useState("");
 
@@ -38,17 +38,20 @@ const Footer = () => {
           
           {/* Social Icons Integrated Smoothly Here */}
           <div className="flex space-x-3 pt-2">
-            <a href="https://www.instagram.com/bhera_society/" target="_blank" rel="noreferrer" className="w-9 h-9 rounded-lg bg-gray-900 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-200" aria-label="Instagram">
+            <a href="https://www.instagram.com/bhera_society/" target="_blank" rel="noreferrer" className="w-9 h-9 rounded-lg bg-gray-900 flex items-center justify-center hover:bg-pink-600 hover:text-white transition-all duration-200" aria-label="Instagram">
               <FaInstagram size={16} />
             </a>
             <a href="https://www.facebook.com/profile.php?id=61566390302611" target="_blank" rel="noreferrer" className="w-9 h-9 rounded-lg bg-gray-900 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-200" aria-label="Facebook">
               <FaFacebookF size={16} />
             </a>
-            <a href="mailto:bherasociety2023@gmail.com" className="w-9 h-9 rounded-lg bg-gray-900 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-200" aria-label="Email">
+            <a href="mailto:bherasociety2023@gmail.com" className="w-9 h-9 rounded-lg bg-gray-900 flex items-center justify-center hover:bg-[#d93025] hover:text-white transition-all duration-200" aria-label="Email">
               <FaEnvelope size={16} />
             </a>
-            <a href="https://www.google.com/maps/place/Shree+Sathya+Lions+Eye+Hospital/@17.5972683,79.9978209,17z/data=!3m1!4b1!4m6!3m5!1s0x3a348f9b50b565e9:0x20233c7ba14c4ce!8m2!3d17.5972683!4d79.9978209!16s%2Fg%2F11whhfm7rz?entry=ttu&g_ep=EgoyMDI1MDYxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noreferrer" className="w-9 h-9 rounded-lg bg-gray-900 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-200" aria-label="Location">
+            <a href="https://www.google.com/maps/place/Shree+Sathya+Lions+Eye+Hospital/@17.5972683,79.9978209,17z/data=!3m1!4b1!4m6!3m5!1s0x3a348f9b50b565e9:0x20233c7ba14c4ce!8m2!3d17.5972683!4d79.9978209!16s%2Fg%2F11whhfm7rz?entry=ttu&g_ep=EgoyMDI1MDYxNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noreferrer" className="w-9 h-9 rounded-lg bg-gray-900 flex items-center justify-center  hover:text-white transition-all duration-200" aria-label="Location">
               <FaMapMarkerAlt size={16} />
+            </a>
+            <a href={whatsapplink} target="_blank" rel="noreferrer" className="w-9 h-9 rounded-lg bg-gray-900 flex items-center justify-center hover:bg-green-600 hover:text-white transition-all duration-200" aria-label="Location">
+              <FaWhatsapp size={16} />
             </a>
           </div>
         </div>

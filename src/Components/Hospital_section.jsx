@@ -1,6 +1,6 @@
 import React from "react";
 import H1 from "../assets/images/srihospital.jpeg";
-import H2 from "../assets/images/p21.jpeg";
+import H2 from "../assets/images/bhavanicarehospital.jpeg";
 import {
   MapPin,
   Phone,
@@ -20,13 +20,13 @@ const hospitals = [
   },
   {
     id: 2,
-    name: "Lions eye hospital",
+    name: "Bhavani Eye Care Centre",
     image:H2,
     address:
-      "XGRR+RFW, Revenue Colony, Subedari, Hanamkonda, Telangana 506001",
-    emergency: "+91 90300 82707 ",
+      "18-397/9/633/CSK GREEN VILLAS/Shadnagar mdl Ranga Reddy/telangana 509216",
+    emergency: "+91 97011 91811",
     email: "bherasociety2023@gmail.com",
-    map: "https://maps.app.goo.gl/oQE5dN45E3e6BixU6",
+    map: "https://maps.app.goo.gl/bxeXs482P8QTX5wbA",
   }
 ];
 const HospitalsAndFacilities = () => {
