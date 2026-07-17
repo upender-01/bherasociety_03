@@ -94,7 +94,7 @@ const Navbar = () => {
               <img
                 src={Logo}   // Place your logo in public/logo.png
                 alt="Bhera Society Logo"
-                className="h-14 w-auto object-contain rounded-2xl"
+                className="h-14 w-auto object-contain rounded-2xl transition-transform duration-300 ease-in-out hover:scale-150"
               />
             </Link>
           </div>
