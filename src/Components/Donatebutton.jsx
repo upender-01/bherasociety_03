@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Heart, CreditCard, QrCode, ShieldCheck, HeartHandshake } from 'lucide-react';
 import Qr from "../assets/images/Qr.png";
 const API_URL=import.meta.env.VITE_API_URL;
+const RP_KEY=import.meta.env.VITE_RAZORPAY_KEY_ID;
 const Donatebutton = () => {
   const [amount, setAmount] = useState(500);
   const [loading, setLoading] = useState(false);
@@ -29,14 +30,14 @@ const Donatebutton = () => {
     setLoading(true);
     const isScriptLoaded = await loadRazorpayScript();
 
-    if (!isScriptLoaded) {
+    if (!isScriptLoaded){
       alert('Razorpay SDK failed to load. Are you online?');
       setLoading(false);
       return;
     }
 
     try {
-      const result = await fetch(`${API_URL}/create-order`, {
+      const result = await fetch(`${API_URL}/api/payment/create-order`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -51,7 +52,7 @@ const Donatebutton = () => {
       const order = await result.json();
 
       const options = {
-        key: process.env.REACT_APP_RAZORPAY_KEY_ID || process.env.VITE_RAZORPAY_KEY_ID, 
+        key: RP_KEY, 
         amount: order.amount,
         currency: order.currency,
         name: 'Life Savers Foundation',
