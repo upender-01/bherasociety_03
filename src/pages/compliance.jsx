@@ -10,42 +10,62 @@ import {
 
 import BackgroundImage from "../assets/background_image.png";
 
+// ===================
+// Dummy PDF Imports
+// Replace these with your actual certificates later
+// ===================
+import ngoRegistration from "../assets/documents/ngo-registration.pdf";
+import certificate12A from "../assets/documents/12a-certificate.pdf";
+import certificate80G from "../assets/documents/80g-certificate.pdf";
+import annualReport from "../assets/documents/annual-report.pdf";
+import auditReport from "../assets/documents/audit-report.pdf";
+import csrCompliance from "../assets/documents/csr-compliance.pdf";
+
+// ===================
+// Compliance Data
+// ===================
 const complianceData = [
   {
     title: "NGO Registration",
     icon: <Building2 size={32} />,
     description:
       "Official registration certificate of the organization.",
+    document: ngoRegistration,
   },
   {
     title: "12A Certificate",
     icon: <BadgeCheck size={32} />,
     description:
       "Income Tax exemption certificate under Section 12A.",
+    document: certificate12A,
   },
   {
     title: "80G Certificate",
     icon: <ShieldCheck size={32} />,
     description:
       "Tax benefits available for eligible donors.",
+    document: certificate80G,
   },
   {
     title: "Annual Reports",
     icon: <FileText size={32} />,
     description:
       "Transparency reports and yearly organizational activities.",
+    document: annualReport,
   },
   {
     title: "Audit Reports",
     icon: <FileText size={32} />,
     description:
       "Financial audit reports ensuring accountability.",
+    document: auditReport,
   },
   {
     title: "CSR Compliance",
     icon: <BadgeCheck size={32} />,
     description:
       "Compliance documentation for corporate CSR partnerships.",
+    document: csrCompliance,
   },
 ];
 
@@ -74,7 +94,6 @@ const ComplianceSection = () => {
       <div className="absolute bottom-20 right-20 w-96 h-96 bg-blue-500/20 rounded-full blur-[150px]" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
-
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 60 }}
@@ -88,22 +107,18 @@ const ComplianceSection = () => {
           </span>
 
           <h2 className="text-5xl md:text-6xl font-bold text-white mt-4">
-            Compliance &
-            <span className="text-cyan-400">
-              Certifications
-            </span>
+            Compliance &{" "}
+            <span className="text-cyan-400">Certifications</span>
           </h2>
 
           <p className="mt-6 text-slate-400 max-w-3xl mx-auto text-lg">
-            We maintain complete transparency through
-            regulatory compliance, certifications,
-            financial accountability, and annual reporting.
+            We maintain complete transparency through regulatory compliance,
+            certifications, financial accountability, and annual reporting.
           </p>
         </motion.div>
 
-        {/* Cards */}
+        {/* Compliance Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
           {complianceData.map((item, index) => (
             <motion.div
               key={index}
@@ -137,19 +152,24 @@ const ComplianceSection = () => {
                 duration-500
               "
             >
-              <div className="text-cyan-400 mb-5">
-                {item.icon}
-              </div>
+              {/* Icon */}
+              <div className="text-cyan-400 mb-5">{item.icon}</div>
 
+              {/* Title */}
               <h3 className="text-2xl font-bold text-white">
                 {item.title}
               </h3>
 
+              {/* Description */}
               <p className="mt-4 text-slate-400 leading-relaxed">
                 {item.description}
               </p>
 
-              <button
+              {/* View Document Button */}
+              <a
+                href={item.document}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="
                   mt-6
                   inline-flex
@@ -170,12 +190,12 @@ const ComplianceSection = () => {
               >
                 <Download size={18} />
                 View Document
-              </button>
+              </a>
             </motion.div>
           ))}
         </div>
 
-        {/* Bottom Trust Box */}
+        {/* Trust Section */}
         <motion.div
           initial={{
             opacity: 0,
@@ -207,13 +227,11 @@ const ComplianceSection = () => {
           </h3>
 
           <p className="text-slate-400 max-w-3xl mx-auto mt-4">
-            Every donation, healthcare initiative,
-            and community program is managed with
-            accountability and compliance to ensure
-            maximum impact and trust.
+            Every donation, healthcare initiative, and community program is
+            managed with accountability and compliance to ensure maximum impact
+            and trust.
           </p>
         </motion.div>
-
       </div>
     </section>
   );
